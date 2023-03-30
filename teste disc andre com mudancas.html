@@ -1,0 +1,959 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/style.css">
+<title>Teste DiSC</title>
+</head>
+<body>
+<nav class="navbar navbar-toggleable-md fixed-top bg-faded">
+<div class="navbar-brand">
+<img src="media/abracoaching.png" href="abracoaching.com.br" id="abra">
+</div>
+</nav>
+<div class="container">
+<h2>Selecione as caracter�sticas que MAIS e MENOS tenham a ver com voc&ecirc;</h2>
+<p style="padding-right: 15px; margin-bottom: 20px; margin: 7px;font-size: 20px">Tempo restante:
+<span id="timeremaining" style="color: red;"></span>
+</p>
+<form action="result.php" method="post">
+<div class="container questao" id="p0">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 1 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Entusiasmado</td>
+<td class="col-md-2"><input type="radio" name="m[0]" value="I" id="m_0_0" required></td>
+<td class="col-md-2"><input type="radio" name="l[0]" value="I" id="l_0_0" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Diplom&aacute;tico</td>
+<td class="col-md-2"><input type="radio" name="m[0]" value="C" id="m_0_1" required></td>
+<td class="col-md-2"><input type="radio" name="l[0]" value="C" id="l_0_1" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Ousado</td>
+<td class="col-md-2"><input type="radio" name="m[0]" value="D" id="m_0_2" required></td>
+<td class="col-md-2"><input type="radio" name="l[0]" value="D" id="l_0_2" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Satisfeito</td>
+<td class="col-md-2"><input type="radio" name="m[0]" value="S" id="m_0_3" required></td>
+<td class="col-md-2"><input type="radio" name="l[0]" value="S" id="l_0_3" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p1">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 2 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Bem Humorado</td>
+<td class="col-md-2"><input type="radio" name="m[1]" value="S" id="m_1_4" required></td>
+<td class="col-md-2"><input type="radio" name="l[1]" value="#" id="l_1_4" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Determinado</td>
+<td class="col-md-2"><input type="radio" name="m[1]" value="D" id="m_1_5" required></td>
+<td class="col-md-2"><input type="radio" name="l[1]" value="D" id="l_1_5" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Convincente</td>
+<td class="col-md-2"><input type="radio" name="m[1]" value="I" id="m_1_6" required></td>
+<td class="col-md-2"><input type="radio" name="l[1]" value="I" id="l_1_6" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Cuidadoso</td>
+<td class="col-md-2"><input type="radio" name="m[1]" value="C" id="m_1_7" required></td>
+<td class="col-md-2"><input type="radio" name="l[1]" value="C" id="l_1_7" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p2">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 3 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Franco</td>
+<td class="col-md-2"><input type="radio" name="m[2]" value="D" id="m_2_8" required></td>
+<td class="col-md-2"><input type="radio" name="l[2]" value="D" id="l_2_8" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Preciso</td>
+<td class="col-md-2"><input type="radio" name="m[2]" value="C" id="m_2_9" required></td>
+<td class="col-md-2"><input type="radio" name="l[2]" value="C" id="l_2_9" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Calmo</td>
+<td class="col-md-2"><input type="radio" name="m[2]" value="#" id="m_2_10" required></td>
+<td class="col-md-2"><input type="radio" name="l[2]" value="S" id="l_2_10" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Amig&aacute;vel</td>
+<td class="col-md-2"><input type="radio" name="m[2]" value="I" id="m_2_11" required></td>
+<td class="col-md-2"><input type="radio" name="l[2]" value="#" id="l_2_11" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p3">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 4 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Controlado</td>
+<td class="col-md-2"><input type="radio" name="m[3]" value="C" id="m_3_12" required></td>
+<td class="col-md-2"><input type="radio" name="l[3]" value="C" id="l_3_12" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Decisivo</td>
+<td class="col-md-2"><input type="radio" name="m[3]" value="D" id="m_3_13" required></td>
+<td class="col-md-2"><input type="radio" name="l[3]" value="D" id="l_3_13" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Falante</td>
+<td class="col-md-2"><input type="radio" name="m[3]" value="I" id="m_3_14" required></td>
+<td class="col-md-2"><input type="radio" name="l[3]" value="I" id="l_3_14" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Convencional</td>
+<td class="col-md-2"><input type="radio" name="m[3]" value="S" id="m_3_15" required></td>
+<td class="col-md-2"><input type="radio" name="l[3]" value="S" id="l_3_15" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p4" hidden="hidden">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 5 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr> 
+<td class="col-md-8">Aventureiro</td>
+<td class="col-md-2"><input type="radio" name="m[4]" value="D" id="m_4_16" required></td>
+<td class="col-md-2"><input type="radio" name="l[4]" value="D" id="l_4_16" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Moderado</td>
+<td class="col-md-2"><input type="radio" name="m[4]" value="S" id="m_4_17" required></td>
+<td class="col-md-2"><input type="radio" name="l[4]" value="S" id="l_4_17" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Extrovertido</td>
+<td class="col-md-2"><input type="radio" name="m[4]" value="I" id="m_4_18" required></td>
+<td class="col-md-2"><input type="radio" name="l[4]" value="I" id="l_4_18" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Perspicaz</td>
+<td class="col-md-2"><input type="radio" name="m[4]" value="C" id="m_4_19" required></td>
+<td class="col-md-2"><input type="radio" name="l[4]" value="C" id="l_4_19" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p5">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 6 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Original</td>
+<td class="col-md-2"><input type="radio" name="m[5]" value="#" id="m_5_20" required></td>
+<td class="col-md-2"><input type="radio" name="l[5]" value="D" id="l_5_20" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Humilde</td>
+<td class="col-md-2"><input type="radio" name="m[5]" value="#" id="m_5_21" required></td>
+<td class="col-md-2"><input type="radio" name="l[5]" value="C" id="l_5_21" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Persuasivo</td>
+<td class="col-md-2"><input type="radio" name="m[5]" value="I" id="m_5_22" required></td>
+<td class="col-md-2"><input type="radio" name="l[5]" value="#" id="l_5_22" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Gentil</td>
+<td class="col-md-2"><input type="radio" name="m[5]" value="S" id="m_5_23" required></td>
+<td class="col-md-2"><input type="radio" name="l[5]" value="S" id="l_5_23" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p6">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 7 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Responsivo</td>
+<td class="col-md-2"><input type="radio" name="m[6]" value="#" id="m_6_24" required></td>
+<td class="col-md-2"><input type="radio" name="l[6]" value="S" id="l_6_24" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Expressivo</td>
+<td class="col-md-2"><input type="radio" name="m[6]" value="I" id="m_6_25" required></td>
+<td class="col-md-2"><input type="radio" name="l[6]" value="I" id="l_6_25" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Consciente</td>
+<td class="col-md-2"><input type="radio" name="m[6]" value="C" id="m_6_26" required></td>
+<td class="col-md-2"><input type="radio" name="l[6]" value="C" id="l_6_26" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Dominante</td>
+<td class="col-md-2"><input type="radio" name="m[6]" value="D" id="m_6_27" required></td>
+<td class="col-md-2"><input type="radio" name="l[6]" value="D" id="l_6_27" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+ <div class="container questao" id="p7">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 8 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Modesto</td>
+<td class="col-md-2"><input type="radio" name="m[7]" value="S" id="m_7_28" required></td>
+<td class="col-md-2"><input type="radio" name="l[7]" value="S" id="l_7_28" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Esquivo</td>
+<td class="col-md-2"><input type="radio" name="m[7]" value="I" id="m_7_29" required></td>
+<td class="col-md-2"><input type="radio" name="l[7]" value="I" id="l_7_29" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Impaciente</td>
+<td class="col-md-2"><input type="radio" name="m[7]" value="D" id="m_7_30" required></td>
+<td class="col-md-2"><input type="radio" name="l[7]" value="D" id="l_7_30" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Atento</td>
+<td class="col-md-2"><input type="radio" name="m[7]" value="C" id="m_7_31" required></td>
+<td class="col-md-2"><input type="radio" name="l[7]" value="#" id="l_7_31" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p8">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 9 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Insistente</td>
+<td class="col-md-2"><input type="radio" name="m[8]" value="D" id="m_8_32" required></td>
+<td class="col-md-2"><input type="radio" name="l[8]" value="D" id="l_8_32" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Ador&aacute;vel</td>
+<td class="col-md-2"><input type="radio" name="m[8]" value="S" id="m_8_33" required></td>
+<td class="col-md-2"><input type="radio" name="l[8]" value="S" id="l_8_33" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Percept&iacute;vel</td>
+<td class="col-md-2"><input type="radio" name="m[8]" value="C" id="m_8_34" required></td>
+<td class="col-md-2"><input type="radio" name="l[8]" value="C" id="l_8_34" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Magn&eacute;tico</td>
+<td class="col-md-2"><input type="radio" name="m[8]" value="I" id="m_8_35" required></td>
+<td class="col-md-2"><input type="radio" name="l[8]" value="I" id="l_8_35" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p9">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 10 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Submisso</td>
+<td class="col-md-2"><input type="radio" name="m[9]" value="S" id="m_9_36" required></td>
+<td class="col-md-2"><input type="radio" name="l[9]" value="S" id="l_9_36" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Valente</td>
+<td class="col-md-2"><input type="radio" name="m[9]" value="D" id="m_9_37" required></td>
+<td class="col-md-2"><input type="radio" name="l[9]" value="D" id="l_9_37" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Inspirador</td>
+<td class="col-md-2"><input type="radio" name="m[9]" value="I" id="m_9_38" required></td>
+<td class="col-md-2"><input type="radio" name="l[9]" value="I" id="l_9_38" required></td>
+</tr>
+<tr>
+<td class="col-md-8">T&iacute;mido</td>
+<td class="col-md-2"><input type="radio" name="m[9]" value="#" id="m_9_39" required></td>
+<td class="col-md-2"><input type="radio" name="l[9]" value="C" id="l_9_39" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p10">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 11 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Reservado</td>
+<td class="col-md-2"><input type="radio" name="m[10]" value="C" id="m_10_40" required></td>
+<td class="col-md-2"><input type="radio" name="l[10]" value="C" id="l_10_40" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Alegre</td>
+<td class="col-md-2"><input type="radio" name="m[10]" value="I" id="m_10_41" required></td>
+<td class="col-md-2"><input type="radio" name="l[10]" value="I" id="l_10_41" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Forte Vontade</td>
+<td class="col-md-2"><input type="radio" name="m[10]" value="D" id="m_10_42" required></td>
+<td class="col-md-2"><input type="radio" name="l[10]" value="D" id="l_10_42" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Atencioso</td>
+<td class="col-md-2"><input type="radio" name="m[10]" value="S" id="m_10_43" required></td>
+<td class="col-md-2"><input type="radio" name="l[10]" value="S" id="l_10_43" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p11">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 12 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Estimulante</td>
+<td class="col-md-2"><input type="radio" name="m[11]" value="I" id="m_11_44" required></td>
+<td class="col-md-2"><input type="radio" name="l[11]" value="I" id="l_11_44" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Am&aacute;vel</td>
+<td class="col-md-2"><input type="radio" name="m[11]" value="S" id="m_11_45" required></td>
+<td class="col-md-2"><input type="radio" name="l[11]" value="S" id="l_11_45" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Independente</td>
+<td class="col-md-2"><input type="radio" name="m[11]" value="D" id="m_11_46" required></td>
+<td class="col-md-2"><input type="radio" name="l[11]" value="D" id="l_11_46" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Perceptivo</td>
+<td class="col-md-2"><input type="radio" name="m[11]" value="C" id="m_11_47" required></td>
+<td class="col-md-2"><input type="radio" name="l[11]" value="C" id="l_11_47" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p12" hidden="hidden">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 13 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Alegre</td>
+<td class="col-md-2"><input type="radio" name="m[12]" value="I" id="m_12_48" required></td>
+<td class="col-md-2"><input type="radio" name="l[12]" value="I" id="l_12_48" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Privado</td>
+<td class="col-md-2"><input type="radio" name="m[12]" value="C" id="m_12_49" required></td>
+<td class="col-md-2"><input type="radio" name="l[12]" value="C" id="l_12_49" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Atencioso</td>
+<td class="col-md-2"><input type="radio" name="m[12]" value="S" id="m_12_50" required></td>
+<td class="col-md-2"><input type="radio" name="l[12]" value="S" id="l_12_50" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Competitivo</td>
+<td class="col-md-2"><input type="radio" name="m[12]" value="D" id="m_12_51" required></td>
+<td class="col-md-2"><input type="radio" name="l[12]" value="D" id="l_12_51" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p13" hidden="hidden">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 14 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Firme</td>
+<td class="col-md-2"><input type="radio" name="m[13]" value="D" id="m_13_52" required></td>
+<td class="col-md-2"><input type="radio" name="l[13]" value="D" id="l_13_52" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Obediente</td>
+<td class="col-md-2"><input type="radio" name="m[13]" value="S" id="m_13_53" required></td>
+<td class="col-md-2"><input type="radio" name="l[13]" value="S" id="l_13_53" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Chamativo</td>
+<td class="col-md-2"><input type="radio" name="m[13]" value="C" id="m_13_54" required></td>
+<td class="col-md-2"><input type="radio" name="l[13]" value="C" id="l_13_54" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Brincalh&atilde;o</td>
+<td class="col-md-2"><input type="radio" name="m[13]" value="I" id="m_13_55" required></td>
+<td class="col-md-2"><input type="radio" name="l[13]" value="I" id="l_13_55" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p14" hidden="hidden">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 15 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Previs&iacute;vel</td>
+<td class="col-md-2"><input type="radio" name="m[14]" value="S" id="m_14_56" required></td>
+<td class="col-md-2"><input type="radio" name="l[14]" value="S" id="l_14_56" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Teimoso</td>
+<td class="col-md-2"><input type="radio" name="m[14]" value="D" id="m_14_57" required></td>
+<td class="col-md-2"><input type="radio" name="l[14]" value="D" id="l_14_57" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Instropectivo</td>
+<td class="col-md-2"><input type="radio" name="m[14]" value="C" id="m_14_58" required></td>
+<td class="col-md-2"><input type="radio" name="l[14]" value="#" id="l_14_58" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Atrativo</td>
+<td class="col-md-2"><input type="radio" name="m[14]" value="I" id="m_14_59" required></td>
+<td class="col-md-2"><input type="radio" name="l[14]" value="I" id="l_14_59" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p15" hidden="hidden">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 16 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Atrevido</td>
+<td class="col-md-2"><input type="radio" name="m[15]" value="D" id="m_15_60" required></td>
+<td class="col-md-2"><input type="radio" name="l[15]" value="D" id="l_15_60" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Charmoso</td>
+<td class="col-md-2"><input type="radio" name="m[15]" value="I" id="m_15_61" required></td>
+<td class="col-md-2"><input type="radio" name="l[15]" value="I" id="l_15_61" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Fiel</td>
+<td class="col-md-2"><input type="radio" name="m[15]" value="S" id="m_15_62" required></td>
+<td class="col-md-2"><input type="radio" name="l[15]" value="S" id="l_15_62" required></td>
+</tr>
+<tr>
+<td class="col-md-8">L&oacute;gico</td>
+<td class="col-md-2"><input type="radio" name="m[15]" value="C" id="m_15_63" required></td>
+<td class="col-md-2"><input type="radio" name="l[15]" value="C" id="l_15_63" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p16" hidden="hidden">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 17 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Quieto</td>
+<td class="col-md-2"><input type="radio" name="m[16]" value="C" id="m_16_64" required></td>
+<td class="col-md-2"><input type="radio" name="l[16]" value="C" id="l_16_64" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Soci&aacute;vel</td>
+<td class="col-md-2"><input type="radio" name="m[16]" value="I" id="m_16_65" required></td>
+<td class="col-md-2"><input type="radio" name="l[16]" value="I" id="l_16_65" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Paciente</td>
+<td class="col-md-2"><input type="radio" name="m[16]" value="S" id="m_16_66" required></td>
+<td class="col-md-2"><input type="radio" name="l[16]" value="S" id="l_16_66" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Auto Suficiente</td>
+<td class="col-md-2"><input type="radio" name="m[16]" value="D" id="m_16_67" required></td>
+<td class="col-md-2"><input type="radio" name="l[16]" value="D" id="l_16_67" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p17" hidden="hidden">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 18 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Completo</td>
+<td class="col-md-2"><input type="radio" name="m[17]" value="C" id="m_17_68" required></td>
+<td class="col-md-2"><input type="radio" name="l[17]" value="C" id="l_17_68" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Ansioso</td>
+<td class="col-md-2"><input type="radio" name="m[17]" value="D" id="m_17_69" required></td>
+<td class="col-md-2"><input type="radio" name="l[17]" value="#" id="l_17_69" required></td>
+</tr>
+<tr>
+<td class="col-md-8">De Bom Humor</td>
+<td class="col-md-2"><input type="radio" name="m[17]" value="I" id="m_17_70" required></td>
+<td class="col-md-2"><input type="radio" name="l[17]" value="I" id="l_17_70" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Disposto</td>
+<td class="col-md-2"><input type="radio" name="m[17]" value="S" id="m_17_71" required></td>
+<td class="col-md-2"><input type="radio" name="l[17]" value="S" id="l_17_71" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p18" hidden="hidden">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 19 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Medroso</td>
+<td class="col-md-2"><input type="radio" name="m[18]" value="#" id="m_18_72" required></td>
+<td class="col-md-2"><input type="radio" name="l[18]" value="C" id="l_18_72" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Agressivo</td>
+<td class="col-md-2"><input type="radio" name="m[18]" value="D" id="m_18_73" required></td>
+<td class="col-md-2"><input type="radio" name="l[18]" value="D" id="l_18_73" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Extrovertido</td>
+<td class="col-md-2"><input type="radio" name="m[18]" value="I" id="m_18_74" required></td>
+<td class="col-md-2"><input type="radio" name="l[18]" value="I" id="l_18_74" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Amig&aacute;vel</td>
+<td class="col-md-2"><input type="radio" name="m[18]" value="S" id="m_18_75" required></td>
+<td class="col-md-2"><input type="radio" name="l[18]" value="S" id="l_18_75" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p19" hidden="hidden">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 20 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Imparcial</td>
+<td class="col-md-2"><input type="radio" name="m[19]" value="#" id="m_19_76" required></td>
+<td class="col-md-2"><input type="radio" name="l[19]" value="C" id="l_19_76" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Simp&aacute;tico</td>
+<td class="col-md-2"><input type="radio" name="m[19]" value="S" id="m_19_77" required></td>
+<td class="col-md-2"><input type="radio" name="l[19]" value="S" id="l_19_77" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Confiante</td>
+<td class="col-md-2"><input type="radio" name="m[19]" value="I" id="m_19_78" required></td>
+<td class="col-md-2"><input type="radio" name="l[19]" value="I" id="l_19_78" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Assertivo</td>
+<td class="col-md-2"><input type="radio" name="m[19]" value="D" id="m_19_79" required></td>
+<td class="col-md-2"><input type="radio" name="l[19]" value="D" id="l_19_79" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p20" hidden="hidden">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 21 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Persistente</td>
+<td class="col-md-2"><input type="radio" name="m[20]" value="D" id="m_20_80" required></td>
+<td class="col-md-2"><input type="radio" name="l[20]" value="D" id="l_20_80" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Generoso</td>
+<td class="col-md-2"><input type="radio" name="m[20]" value="S" id="m_20_81" required></td>
+<td class="col-md-2"><input type="radio" name="l[20]" value="S" id="l_20_81" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Disciplinado</td>
+<td class="col-md-2"><input type="radio" name="m[20]" value="C" id="m_20_82" required></td>
+<td class="col-md-2"><input type="radio" name="l[20]" value="C" id="l_20_82" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Animado</td>
+<td class="col-md-2"><input type="radio" name="m[20]" value="I" id="m_20_83" required></td>
+<td class="col-md-2"><input type="radio" name="l[20]" value="I" id="l_20_83" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p21" hidden="hidden">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 22 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Male&aacute;vel</td>
+<td class="col-md-2"><input type="radio" name="m[21]" value="S" id="m_21_84" required></td>
+<td class="col-md-2"><input type="radio" name="l[21]" value="S" id="l_21_84" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Contundente</td>
+<td class="col-md-2"><input type="radio" name="m[21]" value="D" id="m_21_85" required></td>
+<td class="col-md-2"><input type="radio" name="l[21]" value="D" id="l_21_85" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Introvertido</td>
+<td class="col-md-2"><input type="radio" name="m[21]" value="C" id="m_21_86" required></td>
+<td class="col-md-2"><input type="radio" name="l[21]" value="C" id="l_21_86" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Impulsivo</td>
+<td class="col-md-2"><input type="radio" name="m[21]" value="I" id="m_21_87" required></td>
+<td class="col-md-2"><input type="radio" name="l[21]" value="I" id="l_21_87" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p22" hidden="hidden">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 23 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Refinado</td>
+<td class="col-md-2"><input type="radio" name="m[22]" value="C" id="m_22_88" required></td>
+<td class="col-md-2"><input type="radio" name="l[22]" value="C" id="l_22_88" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Vigoroso</td>
+<td class="col-md-2"><input type="radio" name="m[22]" value="D" id="m_22_89" required></td>
+<td class="col-md-2"><input type="radio" name="l[22]" value="D" id="l_22_89" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Indulgente</td>
+<td class="col-md-2"><input type="radio" name="m[22]" value="S" id="m_22_90" required></td>
+<td class="col-md-2"><input type="radio" name="l[22]" value="S" id="l_22_90" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Interativo</td>
+<td class="col-md-2"><input type="radio" name="m[22]" value="I" id="m_22_91" required></td>
+<td class="col-md-2"><input type="radio" name="l[22]" value="I" id="l_22_91" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p23" hidden="hidden">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 24 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Compat&iacute;vel</td>
+<td class="col-md-2"><input type="radio" name="m[23]" value="C" id="m_23_92" required></td>
+<td class="col-md-2"><input type="radio" name="l[23]" value="C" id="l_23_92" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Cativante</td>
+<td class="col-md-2"><input type="radio" name="m[23]" value="I" id="m_23_93" required></td>
+ <td class="col-md-2"><input type="radio" name="l[23]" value="I" id="l_23_93" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Contente</td>
+<td class="col-md-2"><input type="radio" name="m[23]" value="S" id="m_23_94" required></td>
+<td class="col-md-2"><input type="radio" name="l[23]" value="S" id="l_23_94" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Exigente</td>
+<td class="col-md-2"><input type="radio" name="m[23]" value="D" id="m_23_95" required></td>
+<td class="col-md-2"><input type="radio" name="l[23]" value="D" id="l_23_95" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p24" hidden="hidden">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 25 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Cooperativo</td>
+<td class="col-md-2"><input type="radio" name="m[24]" value="S" id="m_24_96" required></td>
+<td class="col-md-2"><input type="radio" name="l[24]" value="S" id="l_24_96" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Feliz</td>
+<td class="col-md-2"><input type="radio" name="m[24]" value="I" id="m_24_97" required></td>
+<td class="col-md-2"><input type="radio" name="l[24]" value="I" id="l_24_97" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Argumentativo</td>
+<td class="col-md-2"><input type="radio" name="m[24]" value="D" id="m_24_98" required></td>
+<td class="col-md-2"><input type="radio" name="l[24]" value="D" id="l_24_98" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Sistem&aacute;tico</td>
+<td class="col-md-2"><input type="radio" name="m[24]" value="C" id="m_24_99" required></td>
+<td class="col-md-2"><input type="radio" name="l[24]" value="C" id="l_24_99" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p25" hidden="hidden">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 26 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Jovial</td>
+<td class="col-md-2"><input type="radio" name="m[25]" value="I" id="m_25_100" required></td>
+<td class="col-md-2"><input type="radio" name="l[25]" value="I" id="l_25_100" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Direto</td>
+<td class="col-md-2"><input type="radio" name="m[25]" value="D" id="m_25_101" required></td>
+<td class="col-md-2"><input type="radio" name="l[25]" value="D" id="l_25_101" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Preciso</td>
+<td class="col-md-2"><input type="radio" name="m[25]" value="C" id="m_25_102" required></td>
+<td class="col-md-2"><input type="radio" name="l[25]" value="C" id="l_25_102" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Controlado</td>
+<td class="col-md-2"><input type="radio" name="m[25]" value="S" id="m_25_103" required></td>
+<td class="col-md-2"><input type="radio" name="l[25]" value="S" id="l_25_103" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p26" hidden="hidden">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 27 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Cuidadoso</td>
+<td class="col-md-2"><input type="radio" name="m[26]" value="C" id="m_26_104" required></td>
+<td class="col-md-2"><input type="radio" name="l[26]" value="C" id="l_26_104" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Generoso</td>
+<td class="col-md-2"><input type="radio" name="m[26]" value="S" id="m_26_105" required></td>
+<td class="col-md-2"><input type="radio" name="l[26]" value="S" id="l_26_105" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Atraente</td>
+<td class="col-md-2"><input type="radio" name="m[26]" value="I" id="m_26_106" required></td>
+<td class="col-md-2"><input type="radio" name="l[26]" value="I" id="l_26_106" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Inquieto</td>
+<td class="col-md-2"><input type="radio" name="m[26]" value="D" id="m_26_107" required></td>
+<td class="col-md-2"><input type="radio" name="l[26]" value="D" id="l_26_107" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="container questao" id="p27" hidden="hidden">
+<table class="table table-striped">
+<thead>
+<td style="color: gray">Quest&atilde;o 28 de 28</td>
+<td style="text-align: center">MAIS</td>
+<td style="text-align: center">MENOS</td>
+</thead>
+<tbody>
+<tr>
+<td class="col-md-8">Respeitoso</td>
+<td class="col-md-2"><input type="radio" name="m[27]" value="C" id="m_27_108" required></td>
+<td class="col-md-2"><input type="radio" name="l[27]" value="C" id="l_27_108" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Pioneiro</td>
+<td class="col-md-2"><input type="radio" name="m[27]" value="D" id="m_27_109" required></td>
+<td class="col-md-2"><input type="radio" name="l[27]" value="D" id="l_27_109" required></td>
+</tr>
+<tr>
+<td class="col-md-8">&Uacute;til</td>
+<td class="col-md-2"><input type="radio" name="m[27]" value="S" id="m_27_110" required></td>
+<td class="col-md-2"><input type="radio" name="l[27]" value="S" id="l_27_110" required></td>
+</tr>
+<tr>
+<td class="col-md-8">Otimista</td>
+<td class="col-md-2"><input type="radio" name="m[27]" value="I" id="m_27_111" required></td>
+<td class="col-md-2"><input type="radio" name="l[27]" value="I" id="l_27_111" required></td>
+</tr>
+</tbody>
+</table>
+</div>
+</form>
+</div>
+<script src="countdown.php"></script>
+<script>
+		lastDisabled = "";
+		
+		$(document).ready(function(){
+			if (window.screen.width < 800) {
+				// do something
+				
+				$(".container").css("padding","0px");
+				$(".container").css("margin-top","80px");
+			}
+			
+			$("body").fadeIn(1000);
+		})
+		
+		$(":radio").change(function(e){
+			console.log(distance);
+			var a = e.target.id.substring(0,1) == "m" ? "l" : "m";
+			if(lastDisabled !== ""){
+				$(lastDisabled).prop("disabled",false);
+			}
+			lastDisabled = "#" + a + e.target.id.substring(1, this.length);
+			$(lastDisabled).prop("disabled",true);
+			if($(e.target.closest("table")).find("input:radio:checked").length == 2){
+				id++;
+				var newid = "#p" + id;
+				//console.log(newid);
+				if(newid === "#p28"){
+					$(e.target.closest(".questao")).hide(500, function(){
+						var now = new Date();
+						var time = now.getTime();
+						time += 10000;
+						now.setTime(time);
+						var d = distance/1000;
+						var mins = Math.floor(d/ 60);
+						var zero_min = mins<10?'0':'';
+						var segs = Math.floor(d - mins * 60);
+						var zero_seg = segs<10?'0':'';
+						var duracao = zero_min + mins + ":" + zero_seg + segs;
+						document.cookie = 
+						'duracao=' + duracao + 
+						'; expires=' + now.toUTCString() + 
+						'; path=/';
+						$(e.target.closest("form")).submit();
+					});
+				}
+				else{
+					$(e.target.closest(".questao")).hide(500, function(){
+						$(newid).show(500);
+					});
+					//inicio = new Date();
+				}
+			}
+		});
+	</script>
+</body>
+</html>
